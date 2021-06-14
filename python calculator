@@ -1,0 +1,71 @@
+from tkinter import *
+from tkinter import messagebox
+import tkinter
+
+root = Tk()
+root.title = "Calculator"
+root.geometry('500x150')
+
+#Functions
+
+
+def Exit():
+     exit()
+
+def Game():
+     def mul():
+          res1 = int(entry1.get()) * int(entry2.get())
+          tkinter.messagebox.showinfo('Answer', '{} is your answer'.format(res1))
+     
+     def sub():
+          res2 = int(entry1.get()) - int(entry2.get())
+          tkinter.messagebox.showinfo('Answer', '{} is your answer'.format(res2))
+          
+     def add():
+          res3 = int(entry1.get()) + int(entry2.get())
+          tkinter.messagebox.showinfo('Answer', '{} is your answer'.format(res3))
+          
+     def div():
+          res4 = int(entry1.get()) / int(entry2.get())
+          tkinter.messagebox.showinfo('Answer', '{} is your answer'.format(res4))
+          
+     master = Tk()
+     master.title = 'Calculator'
+     master.geometry('800x250')
+     
+     #Labels
+     label1 = Label(master,text='Calculator')
+     label1.pack()
+
+     label2 = Label(master,text='Rules: Write the first number in the first box and the second number in the second box and click the operation to get answer')
+     label2.pack()
+
+     #Inputs
+     entry1 = Entry(master)
+     entry1.pack()
+     entry2 = Entry(master)
+     entry2.pack()
+
+     #Button
+     button_1 = Button(master,text = 'X',command = mul)
+     button_1.pack()
+
+     button_2 = Button(master,text = '-',command = sub)
+     button_2.pack()
+
+     button_3 = Button(master,text = '+',command = add)
+     button_3.pack()
+
+     button_4 = Button(master,text = '/',command = div)
+     button_4.pack()
+
+#Label
+my_label = Label(root,text='Do you want to enter caculator?')
+my_label.pack()
+
+#Butons
+button1 = Button(root,text='no',command=Exit)
+button1.pack()
+button2 = Button(root,text='yes',command=Game)
+button2.pack()
+
